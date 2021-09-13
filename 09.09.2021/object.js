@@ -164,21 +164,19 @@ console.log(result)
 //     volumeOfBox({ width: 4, length: 2, height: 2 }) ➞ 16
 //     volumeOfBox({ width: 2, length: 3, height: 5 }) ➞ 30
 
-//     let contains = {
+    let contains = {
    
-//         width : 2,
-//         length: 5,
-//         height: 1,
-// }
-// const volumeOfBox = (object) => object.width*object.length*object.height ;
-// console.log(volumeOfBox(4,2,2));
+        width : 2,
+        length: 5,
+        height: 1,
+}
+const volumeOfBox = (object) => object.width*object.length*object.height ;
+console.log(volumeOfBox(4,2,2));
 
 // function volumeOfBox(obj){
 //     return obj.width * obj.length * obj.height;
 // }
 // console.log(volumeOfBox(2, 5 , 1));
-
-
 
 
 
@@ -191,56 +189,84 @@ console.log(result)
 //     cityFacts({ name: "Paris", population: "2,140,526", continent: "Europe" }) ➞ "Paris has a population of 2,140,526 and is situated in Europe"
 
 
-//        let City = {
+       let City = {
    
-//         name : "Paris",
-//         population: "2,140,526",
-//         continent: "Europe",
-// }
+        name : "Paris",
+        population: "2,140,526",
+        continent: "Europe",
+}
 
-// const cityFacts = (Objs) => {
-//     return `s ${objs.name}has a population of ${Objs.population} and is situated in ${objs.continent} (where X is the city name, Y is the population and Z is the continent the city is situated in `
+const cityFacts = (Objs) => {
+    return `s ${objs.name}has a population of ${Objs.population} and is situated in ${objs.continent} (where X is the city name, Y is the population and Z is the continent the city is situated in `
 
-// console.log(cityFacts(4,2,2));
-
-
+console.log(cityFacts(4,2,2));
 
 
 
-
-// 3. Calculate the profit. You work for a manufacturer, and have been asked to calculate the total profit made on the sales of a product. You are given an object containing the cost price per unit (in dollars), sell price per unit (in dollars), and the starting inventory. Return the total profit made, rounded to the nearest dollar.
+// 3. Calculate the profit.
+// You work for a manufacturer, and have been asked to calculate the total profit made on the sales of a product.
+// You are given an object containing the cost price per unit (in dollars), 
+// sell price per unit (in dollars), and the starting inventory. 
+// Return the total profit made, rounded to the nearest dollar.
 //     Examples:
 //     profit({ costPrice: 32.67, sellPrice: 45.00, inventory: 1200 }) ➞ 14796
 //     profit({ costPrice: 225.89, sellPrice: 550.00, inventory: 100 }) ➞ 32411
 
+// let profit = (obj) => {
+//     let eachUnit = obj.sellPrice - obj.costPrice;
+//     let totalProfit = eachUnit * obj.costPrice;
+
+//     let 
+
+// }
+
+let profit = input => Math.round((input.sellPrice - input.costPrice) * input.inventory);
+console.log(profit({ costPrice: 32.67, sellPrice: 45.00, inventory: 1200 }));
 
 
 
+// 4. Does the Object Contain a Given Key? Write a function that returns true if a hash contains the specified key, and false otherwise.
 
 
+//     Examples:
+//     hasKey({ a: 44, b: 45, c: 46 }, "d") ➞ false
+//     hasKey({ craves: true, midnight: true, snack: true }, "morning") ➞ false
+//     hasKey({ pot: 1, tot: 2, not: 3 }, "not") ➞ true
 
 
+let hasKey = (object, check) => check in object ? true : false;
+console.log(hasKey({ pot: 1, tot: 2, not: undefined }, "not"));
 
 
+// 5. International Greetings. Suppose you have a guest list of students and the country they are from, stored as key-value pairs in an object.
+//     const GUEST_LIST = {
+//         Randy: "Germany",
+//         Karla: "France",
+//         Wendy: "Japan",
+//         Norman: "England",
+//         Sam: "Argentina"
+//     }
+
+// Write a function that takes in a name and returns a name tag, that should read: "Hi! I'm [name], and I'm from [country]." If the name is not in the object, return: "Hi! I'm a guest."
+//     Examples:    
+//     greeting("Randy") ➞ "Hi! I'm Randy, and I'm from Germany."
+//     greeting("Sam") ➞ "Hi! I'm Sam, and I'm from Argentina."
+//     greeting("Monti") ➞ "Hi! I'm a guest." 
 
 
-4. Does the Object Contain a Given Key? Write a function that returns true if a hash contains the specified key, and false otherwise.
-    Examples:
-    hasKey({ a: 44, b: 45, c: 46 }, "d") ➞ false
-    hasKey({ craves: true, midnight: true, snack: true }, "morning") ➞ false
-    hasKey({ pot: 1, tot: 2, not: 3 }, "not") ➞ true
+const GUEST_LIST = {
+    Randy: "Germany",
+    Karla: "France",
+    Wendy: "Japan",
+    Norman: "England",
+    Sam: "Argentina"
+}
 
-
-5. International Greetings. Suppose you have a guest list of students and the country they are from, stored as key-value pairs in an object.
-    const GUEST_LIST = {
-        Randy: "Germany",
-        Karla: "France",
-        Wendy: "Japan",
-        Norman: "England",
-        Sam: "Argentina"
+function greeting(input) {
+    if(input in GUEST_LIST) {
+        return `Yo, I'm ${input} and I come from ${GUEST_LIST[input]}`;
+    } else {
+        return "I'm a guest, pls don't tell anyone!";
     }
-Write a function that takes in a name and returns a name tag, that should read: "Hi! I'm [name], and I'm from [country]." If the name is not in the object, return: "Hi! I'm a guest."
-    Examples:    
-    greeting("Randy") ➞ "Hi! I'm Randy, and I'm from Germany."
-    greeting("Sam") ➞ "Hi! I'm Sam, and I'm from Argentina."
-    greeting("Monti") ➞ "Hi! I'm a guest." */
+}
+console.log(greeting("Randy"));
