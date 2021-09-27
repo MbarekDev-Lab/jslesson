@@ -17,10 +17,8 @@
     //     }
     // }
 
-
     // const dansRoll = personalDice("Dan");
-
-
+    
     // const zoesRoll = personalDice("Zoe");
 
     // dansRoll();
@@ -43,16 +41,17 @@
 //     addSix(21);     // returns 27
 
 const addSix = function () {
-
-    const addItem = item => {
-
+    var addSix = createBase(6);
+    const creatFunc = item => {
+       
+     return
     }
 
     const addItem2 = item => {
-
+     return
     }
     
-    
+    return
 
 }
 
@@ -91,7 +90,6 @@ const addSix = function () {
 
 //     var firstResult = someFunction(9);
 //     var result = firstResult(2);
-
 
 
 // 3- What is the result of the following code? Explain your answer.

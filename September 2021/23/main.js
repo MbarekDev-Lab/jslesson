@@ -1,4 +1,3 @@
-
 const cartMaker = function () {
 	let cartItems = [];
 
