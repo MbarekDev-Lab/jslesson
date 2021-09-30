@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Constructor Functions</h1>
+    
+
+    <script>
+    
+// 3- Make a circle with OOP..
+//     Your task is to create a Circle constructor function that creates a circle with a radius provided by an argument. The circles constructed must have two methods getArea() (PI*r^2) and getPerimeter() (2*PI*r) which give both respective areas and perimeter (circumference).
+
+//     example:
+//         let circy = new Circle(11)
+//         circy.getArea()       // Should return 380.132711084365
+//         circy.getPerimeter()  // Should return 69.11503837897544
+
+class Circle {
+    constructor(options) {
+        Object.assign(this, {
+          x: 100,
+          y: 100,
+          radius: 100,
+          color: 'red'
+        }, options);
+    }
+
+    draw() {
+        const div = document.createElement('div');
+        div.style.position = 'absolute';
+        div.style.left = `${this.x}px`;
+        div.style.top = `${this.y}px`;        
+        div.style.width = `${this.radius}px`;
+        div.style.height = `${this.radius}px`;
+        div.style.border = '1px solid;';
+        div.style.borderRadius = '50%';
+        div.style.backgroundColor = `${this.color}`;
+        document.body.appendChild(div);
+    }
+}
+
+const options = {
+    x: 100,
+    y: 100,
+    radius: 100,
+    color: 'red'
+};
+
+let circy = new Circle(11)
+const circle = new Circle(options);
+circle.draw();
+circy.getArea()
+circy.getPerimeter()
+
+    </script>
+</body>
+</html>

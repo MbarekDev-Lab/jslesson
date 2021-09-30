@@ -51,8 +51,6 @@
 // console.log(result);
 
 
-
-
 // 2. Calculate factorial of n. Reminder n! = 1 * 2 * ... * 
 //     Write a JavaScript program to calculate the factorial of a number.
 //     In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n. For example, 5! = 5 x 4 x 3 x 2 x 1 = 120
@@ -87,10 +85,7 @@
 // let n = 5;
 // answer = factorial(n)
 // console.log("The factorial of " + n + " is " + answer);
-
-
-
-    
+  
 
 // 3. Write a function which can reverse string. 
 //     Write a JavaScript function that reverse a string. Sample Data and output: Example reverse("hello world") Expected Output: dlrow olleh
@@ -109,6 +104,7 @@
 // }
 // console.log(reverse("hello world"));
 
+
 // 4. Write a function that returns the length of a string. Make your function recursive.
 
 //     Examples:
@@ -118,13 +114,26 @@
 //     length("a") ➞ 1
 //     length("") ➞ 0
 
+
 // function stringLength(string)
 //     parts = string.split("");
 //     stringLength = 0;
 //     for (x in parts){
 //         stringLength++;
 // }
-// console.log(length("apple")) 
+// console.log(stringLength("apple"))
+
+
+
+// function stringLength(str, count) {
+//     count = count || 0;
+//     if (str.length) {
+//         return stringLength(str.slice(1), ++count);
+//     } else {
+//         return count;
+//     }
+// }
+// console.log(stringLength("apple and banana"));
 
 // 5. Sum of Digits of a Number.
 //     It is used to find the sum of digits of a number using recursion.
@@ -133,11 +142,11 @@
 //     sumDigits(358) --> 3+5+8 --> returns 16
 //     sumDigits(264) --> 2+6+4 --> returns 12
 
-// function sumDigits(num) {
-//     num = num.toString();
-//     return num.length === 0
-//         ? 0
-//         : +num[0] + sumDigits(num.slice(1));			
-// }
 
-// console.log(sumDigits(264));
+
+function sumDigits(num) {
+    num = num.toString();
+    return num.length === 0 ? 0 : +num[0] + sumDigits(num.slice(1));			
+}
+
+console.log(sumDigits(358));
