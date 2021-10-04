@@ -1,3 +1,18 @@
+<form action="">
+    <label>
+        Diameter: <input type="number" id="diameter"><br><br>
+        Hoogte: <input type="number" id="hoogte"> <br><br>
+        <input type="button" value="bereken" id="berekenBtn"><br><br>
+        <input type="text" id="uitkomst">
+    </label>
+</form>
+
+
+<script>
+     window.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("berekenBtn").addEventListener("click", bereken);
+});
+
 function Cylinder(hoogte, diameter) {
     this.hoogte = hoogte;
     this.diameter = diameter;
@@ -19,4 +34,5 @@ function bereken() {
     var result = myCylinder.volume();
     document.getElementById("uitkomst").value = result;
 }
-bereken() 
+
+</script>
